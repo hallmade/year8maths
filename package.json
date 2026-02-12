@@ -1,0 +1,20 @@
+{
+  "name": "algebra-expression-creator",
+  "version": "1.0.0",
+  "description": "Student algebra practice generator.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "node scripts/dev-server.mjs",
+    "lint": "npm run lint:js && npm run lint:static",
+    "lint:js": "node --check src/landing.js && node --check src/unit.js && node --check src/practice.js && node --check src/quiz-page.js && node --check src/content/catalog.js && node --check src/engines/index.js",
+    "lint:static": "node scripts/lint-static.mjs"
+  },
+  "keywords": [
+    "algebra",
+    "education",
+    "math-practice"
+  ],
+  "license": "UNLICENSED"
+}

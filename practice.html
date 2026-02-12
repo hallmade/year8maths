@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+      },
+      chtml: {
+        scale: 1,
+      },
+    };
+  </script>
+  <script defer src="vendor/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+  <main class="layout">
+    <section class="glass-card app-panel" id="practicePanel">
+      <header class="panel-header">
+        <div class="panel-top quiz-top">
+          <a class="button-link secondary" href="index.html">Back to Units</a>
+          <button id="themeToggle" type="button" class="theme-toggle" aria-pressed="false">Switch to Dark</button>
+        </div>
+        <p class="kicker">Practice Mode</p>
+        <h1 id="pageTitle">Loading...</h1>
+        <p id="pageSubtitle" class="subtitle">Loading topic...</p>
+      </header>
+
+      <div class="controls" aria-label="Problem controls">
+        <label for="taskType">Question Type</label>
+        <select id="taskType" name="taskType"></select>
+        <label for="difficultyLevel">Difficulty</label>
+        <select id="difficultyLevel" name="difficultyLevel"></select>
+      </div>
+
+      <section class="problem-area" aria-live="polite">
+        <p class="label">Question</p>
+        <p class="math" id="questionText">Loading...</p>
+      </section>
+
+      <section class="answer-area" aria-live="polite">
+        <p class="label">Answer</p>
+        <p class="math answer hidden" id="answerText">Try first, then reveal the answer.</p>
+      </section>
+
+      <div class="button-row">
+        <button id="revealBtn" type="button">Reveal Answer</button>
+        <button id="nextBtn" type="button" class="secondary">Generate Another</button>
+        <a id="quizPageBtn" class="button-link secondary" href="quiz.html">Quiz Me!</a>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="src/practice.js"></script>
+</body>
+</html>

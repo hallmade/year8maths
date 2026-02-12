@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Topics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="glass-card app-panel">
+      <header class="panel-header">
+        <div class="panel-top quiz-top">
+          <a class="button-link secondary" href="index.html">Back to Units</a>
+          <button id="themeToggle" type="button" class="theme-toggle" aria-pressed="false">Switch to Dark</button>
+        </div>
+        <p class="kicker">Unit Topics</p>
+        <h1 id="unitTitle">Loading...</h1>
+        <p id="unitSubtitle" class="subtitle">Loading topics...</p>
+      </header>
+
+      <section id="topicsGrid" class="topic-grid" aria-label="Topics"></section>
+    </section>
+  </main>
+
+  <script type="module" src="src/unit.js"></script>
+</body>
+</html>

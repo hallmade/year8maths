@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Builder</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="quiz.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+      },
+      chtml: {
+        scale: 1,
+      },
+    };
+  </script>
+  <script defer src="vendor/mathjax/tex-chtml.js"></script>
+</head>
+<body>
+  <main class="layout quiz-layout">
+    <section class="glass-card app-panel" id="quizHost">
+      <header class="panel-header">
+        <div class="panel-top quiz-top">
+          <a id="backPracticeLink" class="button-link secondary" href="index.html">Back to Practice</a>
+          <button id="themeToggle" type="button" class="theme-toggle" aria-pressed="false">Switch to Dark</button>
+        </div>
+        <p class="kicker">Assessment Mode</p>
+        <h1 id="pageTitle">Loading...</h1>
+        <p id="pageSubtitle" class="subtitle">Loading topic...</p>
+      </header>
+
+      <section id="setupPanel" class="quiz-setup" aria-label="Quiz setup">
+        <div class="setup-block">
+          <p class="label">Question Types</p>
+          <div id="setupTopics"></div>
+        </div>
+
+        <div class="setup-block">
+          <p class="label">Difficulty</p>
+          <div id="setupDifficulty"></div>
+        </div>
+
+        <div class="setup-block">
+          <label for="questionCount">Total Questions</label>
+          <select id="questionCount" name="questionCount">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+      </section>
+
+      <div class="button-row quiz-actions">
+        <button id="generateQuizBtn" type="button">Generate Quiz</button>
+        <button id="checkAnswersBtn" type="button" class="secondary" disabled>Check My Answers</button>
+        <button id="downloadPdfBtn" type="button" class="secondary" disabled hidden>Download PDF</button>
+      </div>
+
+      <p id="quizMessage" class="quiz-message" aria-live="polite"></p>
+
+      <section id="quizSection" class="quiz-section" aria-live="polite"></section>
+    </section>
+  </main>
+
+  <section id="printQuizSheet" class="print-page print-only"></section>
+  <section id="printAnswerSheet" class="print-page print-only"></section>
+
+  <script type="module" src="src/quiz-page.js"></script>
+</body>
+</html>
